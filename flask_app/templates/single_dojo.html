@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Single Dojo{% endblock %}
+{% block content %}
+    <h1>{{ dojo['name'] }} Dojo!</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ninja in ninjas %}
+                <tr>
+                    <td>{{ ninja['first_name'] }}</td>
+                    <td>{{ ninja['last_name'] }}</td>
+                    <td>{{ ninja['age'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/dojo">Home</a>
+{% endblock %}
